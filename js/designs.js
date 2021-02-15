@@ -50,6 +50,7 @@ inputGrid.addEventListener("submit", function (submit) {
 // Function to interact with the Grid
 function makeGrid(height, width, color) {
 
+  // First remove any existing grid
   removeGrid();
   
   for (let i = 0; i < height; i++){
@@ -77,5 +78,10 @@ function makeGrid(height, width, color) {
 
 // Add Event Listner for responding to Reset button press
 inputGrid.addEventListener("reset", function (reset) {
+  
+  // Remove any existing grid
   removeGrid();
+
+  // Reset the Color Picker to default value
+  defaultColor.value = "#000000";
 });
