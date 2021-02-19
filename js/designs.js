@@ -60,20 +60,20 @@ function makeGrid(height, width, color) {
     for (let j = 0; j < width; j++){
       // Add the columns to the table
       let cell = row.insertCell(j);
-
-      // Add Event Listner for responding to mouse single-click on a cell
-      cell.addEventListener("click", function() {
-        // Set the cell color as per user selected color
-        cell.style.backgroundColor = color.value;
-      })
-
-      // Add Event Listner for responding to mouse double-click on a cell
-      cell.addEventListener("dblclick", function() {
-        // Remove color from the cell
-        cell.style.backgroundColor = "rgb(255,255,255)";
-      })
     }
   }
+
+  // Add Event Listner for responding to mouse single-click on the target cell
+  table.addEventListener("click", function(event) {
+    // Set the cell color as per user selected color
+    event.target.style.backgroundColor = color.value;
+  })
+
+  // Add Event Listner for responding to mouse double-click on the target cell
+  table.addEventListener("dblclick", function(event) {
+    // Remove color from the cell
+    event.target.style.backgroundColor = "rgb(255,255,255)";
+  })
 }
 
 // Add Event Listner for responding to Reset button press
